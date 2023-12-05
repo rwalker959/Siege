@@ -1,6 +1,5 @@
 
 class Main {
-	default_gear[] = {{"hgun_PDW2000_F","muzzle_snds_L","","optic_Holosight",{"30Rnd_9x21_Mag",30},{},""},{},{},{"U_B_CombatUniform_mcam",{{"30Rnd_9x21_Mag",30,2}}},{"V_HarnessOGL_brn",{{"FirstAidKit",4},{"30Rnd_9x21_Mag",30,4},{"MiniGrenade",1,1},{"SmokeShellBlue",1,1},{"SmokeShellYellow",1,1},{"SmokeShellGreen",1,1}}},{},"","",{"Binocular","","","",{},{},""},{"ItemMap","ItemGPS","ItemRadio","ItemCompass","ItemWatch",""}};
 	lookForVars[] = {"Upgrades","Support","Perks"};
 };
 
@@ -27,86 +26,6 @@ class VehicleScrapper {
 
 class Upgrades {
 	dialog = "Upgrades_Terminal";
-	
-	class Arsenal_U {
-		title = "STR_UpgradeTitles_Arsenalu";
-		description = "STR_up_ArsenalU";
-		price = 50;
-		varname = "defense_upgrade_arsenal_u";
-		function = "fn_arsenal";
-		condition = "!defense_upgrade_arsenal_u";
-		onServer = true;
-	};
-	
-	class Arsenal_1 {
-		title = "STR_UpgradeTitles_Arsenal1";
-		description = "STR_up_Arsenal1";
-		price = 100;
-		varname = "defense_upgrade_arsenal_1";
-		function = "fn_arsenal";
-		condition = "defense_upgrade_arsenal_u && !defense_upgrade_arsenal_1";
-		onServer = true;
-	};
-	
-	class Arsenal_2 {
-		title = "STR_UpgradeTitles_Arsenal2";
-		description = "STR_up_Arsenal2";
-		price = 150;
-		varname = "defense_upgrade_arsenal_2";
-		function = "fn_arsenal";
-		condition = "defense_upgrade_arsenal_1 && !defense_upgrade_arsenal_2";
-		onServer = true;
-	};
-	
-	class Arsenal_3 {
-		title = "STR_UpgradeTitles_Arsenal3";
-		description = "STR_up_Arsenal3";
-		price = 200;
-		varname = "defense_upgrade_arsenal_3";
-		function = "fn_arsenal";
-		condition = "defense_upgrade_arsenal_2 && !defense_upgrade_arsenal_3";
-		onServer = true;
-	};
-	
-	class Arsenal_4 {
-		title = "STR_UpgradeTitles_Arsenal4";
-		description = "STR_up_Arsenal4";
-		price = 250;
-		varname = "defense_upgrade_arsenal_4";
-		function = "fn_arsenal";
-		condition = "defense_upgrade_arsenal_3 && !defense_upgrade_arsenal_4";
-		onServer = true;
-	};
-	
-	class Arsenal_5 {
-		title = "STR_UpgradeTitles_ArsenalSniper";
-		description = "STR_up_Arsenal5";
-		price = 450;
-		varname = "defense_upgrade_arsenal_5";
-		function = "fn_arsenal";
-		condition = "defense_upgrade_arsenal_4 && !defense_upgrade_arsenal_5 && defense_wave >= 15";
-		onServer = true;
-	};
-	
-	class Arsenal_6 {
-		title = "STR_UpgradeTitles_ArsenalMG";
-		description = "STR_up_Arsenal6";
-		price = 450;
-		varname = "defense_upgrade_arsenal_6";
-		function = "fn_arsenal";
-		condition = "defense_upgrade_arsenal_4 && !defense_upgrade_arsenal_6 && defense_wave >= 15";
-		onServer = true;
-	};
-	
-	class Arsenal_7 {
-		title = "STR_UpgradeTitles_ArsenalSO";
-		description = "STR_up_Arsenal7";
-		price = 450;
-		varname = "defense_upgrade_arsenal_7";
-		function = "fn_arsenal";
-		condition = "defense_upgrade_arsenal_4 && !defense_upgrade_arsenal_7";
-		onServer = true;
-	};
 	
 	class Wall_V1 {
 		title = "STR_UpgradeTitles_Wallv1";
@@ -336,11 +255,6 @@ class Perks {
 		onServer = false;
 	};
 };
-
-
-///#########################################################################\\\
-///Do not change Values below here unless you really know what you are doing\\\
-///#########################################################################\\\
 
 class Difficulty {
 
