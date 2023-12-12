@@ -39,8 +39,3 @@ addMissionEventHandler ["Draw3D", {
 	if (defense_upgrade_air) then {drawIcon3D ["", [0.59,0.98,0.13,1], position defense_airsupport, 0, 0, 0, localize "STR_AirSupportTerminal", 1, 0.05, "PuristaMedium"];};
 	if (defense_upgrade_perk) then {drawIcon3D ["", [0.59,0.98,0.13,1], position defense_perkTerminal, 0, 0, 0, localize "STR_PerkTerminal", 1, 0.05, "PuristaMedium"];};
 }];
-
-
-//player gear & HUD
-[] spawn fn_MainHUD;
-[] spawn fn_spawnGear;

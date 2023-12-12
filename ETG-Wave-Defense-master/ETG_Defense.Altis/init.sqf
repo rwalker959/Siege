@@ -13,7 +13,6 @@ fn_keyhandler = compile preprocessFile "core\fn_keyhandler.sqf";
 fn_jip = compile preprocessFile "core\fn_jip.sqf";
 
 //Misc scripts
-fn_spawnGear = compile preprocessFile "core\misc\fn_spawnGear.sqf";
 fn_VehicleScrapper = compile preprocessFile "core\misc\fn_VehicleScrapper.sqf";
 fn_revive = compile preprocessFile "core\misc\fn_respawn.sqf";
 fn_end = compile preprocessFile "core\misc\fn_end.sqf";
@@ -31,7 +30,6 @@ fn_KillMessage = compile preprocessFile "core\dialog\fn_KillMessage.sqf";
 fn_UpgradeTerminal = compile preprocessFile "core\dialog\fn_UpgradeTerminal.sqf";
 
 //Upgrade scripts
-fn_arsenal = compile preprocessFile "core\upgrades\fn_arsenal.sqf";
 fn_wall = compile preprocessFile "core\upgrades\fn_wall.sqf";
 fn_air = compile preprocessFile "core\upgrades\fn_air.sqf";
 fn_rearmTurrets = compile preprocessFile "core\upgrades\fn_rearmTurrets.sqf";
