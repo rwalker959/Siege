@@ -1,8 +1,17 @@
 //actions
 UpgradeTerminal AddAction [localize "STR_Action_UpgradeTerminal", {[0, "Upgrades", false] call fn_UpgradeTerminal;}];
 VehicleScrapper AddAction [localize "STR_Action_VehicleScrapper", {[0] call fn_VehicleScrapper;}];
-defense_highscore AddAction [localize "STR_Action_Highscoore", {[0] call fn_highscore;}];
 
+	_action1 = ["SpawnsmallUKCrate","Demand Section Resupply Crate","",{execvm "ammoboxes\Troop Resupply.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_action1,true] call ace_interact_menu_fnc_addActionToClass;
+	_action2 = ["spawncrate","Demand Sling Loadable Crate","",{execvm "ammoboxes\Sling Loadable Box.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_action2,true] call ace_interact_menu_fnc_addActionToClass;
+	_action3 = ["spawnnlaw","Demand Matador Crate","",{execvm "ammoboxes\NLAW Resupply.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_action3,true] call ace_interact_menu_fnc_addActionToClass;
+	_action4 = ["spawnnlaw","Demand Medic Resupply Crate","",{execvm "ammoboxes\Medical Resupply.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_action4,true] call ace_interact_menu_fnc_addActionToClass;
+	_action5 = ["spawnnlaw","Demand Explosive Crate","",{execvm "ammoboxes\Explosive Crate.sqf"},{true}] call ace_interact_menu_fnc_createAction;
+	["Land_InfoStand_V1_F",0,["ACE_MainActions"],_action5,true] call ace_interact_menu_fnc_addActionToClass;
 
 //vars
 defense_kills = 0;
@@ -30,12 +39,3 @@ _entries = "true" configClasses (missionConfigFile >> "Perks");
 		[] call compile (_var + " = false;");
 	};
 } forEach _entries;
-
-//3D Marker
-addMissionEventHandler ["Draw3D", {
-	drawIcon3D ["", [0.59,0.98,0.13,1], position UpgradeTerminal, 0, 0, 0, localize "STR_UpgradeTerminal", 1, 0.05, "PuristaMedium"];
-	drawIcon3D ["", [0.59,0.98,0.13,1], position VehicleScrapper, 0, 0, 0, localize "STR_VehicleScrapper", 1, 0.05, "PuristaMedium"];
-	if (defense_upgrade_arsenal_u) then {drawIcon3D ["", [0.59,0.98,0.13,1], position defense_arsenal_ammobox, 0, 0, 0, localize "STR_Arsenal", 1, 0.05, "PuristaMedium"];};
-	if (defense_upgrade_air) then {drawIcon3D ["", [0.59,0.98,0.13,1], position defense_airsupport, 0, 0, 0, localize "STR_AirSupportTerminal", 1, 0.05, "PuristaMedium"];};
-	if (defense_upgrade_perk) then {drawIcon3D ["", [0.59,0.98,0.13,1], position defense_perkTerminal, 0, 0, 0, localize "STR_PerkTerminal", 1, 0.05, "PuristaMedium"];};
-}];
