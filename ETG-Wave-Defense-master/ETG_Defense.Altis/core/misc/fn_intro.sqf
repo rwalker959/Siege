@@ -10,14 +10,13 @@ _camera cameraEffect ["internal","back"];
 _camera camSetFOV 0.700;
 _camera camCommit 0;
 showCinemaBorder false;
-playMusic "LeadTrack01_F";
+ //Need to add radio message here. playMusic "";
 
 _camera camSetPos [28443.4,25691.1,2.86622];
 _camera camSetTarget defense_intro_target;
 _camera camCommit 0;
 uisleep 0;
 
-[missionName ,"Good Luck!", str(date select 2) + "." + str(date select 1) + "." + str(date select 0)] spawn BIS_fnc_infoText;
 "SmokeShellRed" createVehicle [28375.7,25758.8,0];
 
 _camera camSetPos [28546,25745.2,23.3874];
