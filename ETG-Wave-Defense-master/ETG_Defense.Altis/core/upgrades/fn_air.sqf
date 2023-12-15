@@ -72,40 +72,10 @@ if (_mode == "Artillery") exitWith {
 	};
 };
 
-if (_mode == "Supply") exitWith {
-		100 cutText [localize "STR_NOTF_AirMark","PLAIN DOWN",5]; 
-		waitForSupply = true; 
-		["Supply_pos_selection","onMapSingleClick",{
-			[_pos, "Supply"] spawn fn_supply;
-			waitForSupply = false;
-		}] call BIS_fnc_addStackedEventHandler; 
-		
-		waitUntil{!waitForSupply}; 
-		["Supply_pos_selection","onMapSingleClick"] call BIS_fnc_removeStackedEventHandler; 
-		100 cutText [localize "STR_NOTF_AirSupplyIncoming","PLAIN DOWN",5]; 
-		_txt = parseText localize "STR_NOTF_AirSupply";
-		[_txt] remoteExec ["fn_hint", 0, false];
-};
-
 if (_mode == "UAV_Strike") exitWith {
 	defense_uav = ([getMarkerPos "UAV_marker", 0, "B_T_UAV_03_F", WEST] call BIS_fnc_spawnVehicle) select 0;
 	publicvariable "defense_uav";
 	_txt = parseText localize "STR_NOTF_AirUAVSTrike";
-	[_txt] remoteExec ["fn_hint", 0, false];
-};
-
-if (_mode == "Supply_stomper") exitWith {
-	100 cutText [localize "STR_NOTF_AirMark","PLAIN DOWN",5]; 
-	waitForSupply = true; 
-	["Supply_pos_selection","onMapSingleClick",{
-		[_pos, "Supply_stomper"] spawn fn_supply;
-		waitForSupply = false;
-	}] call BIS_fnc_addStackedEventHandler; 
-	
-	waitUntil{!waitForSupply}; 
-	["Supply_pos_selection","onMapSingleClick"] call BIS_fnc_removeStackedEventHandler; 
-	100 cutText [localize "STR_NOTF_AirSupplyIncoming","PLAIN DOWN",5]; 
-	_txt = parseText localize "STR_NOTF_AirSupplyStomper";
 	[_txt] remoteExec ["fn_hint", 0, false];
 };
 
