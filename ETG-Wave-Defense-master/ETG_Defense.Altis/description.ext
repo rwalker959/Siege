@@ -34,11 +34,10 @@ minPlayerDistance = 50;
 class Header {
 	gameType = Coop;
 	minPlayers = 1;
-	maxPlayers = 8;
+	maxPlayers = 30;
 };
 
 class RscTitles {
-	#include "dialog\onKilledHud.hpp"
 	#include "dialog\MainHUD.hpp"
 	#include "dialog\End_Stats.hpp"
 };
@@ -62,7 +61,7 @@ class Params
 		title = "Tickets";
 		values[] = {10, 15, 20, 25, 30, 99999};
 		texts[] = {"10 Tickets","15 Tickets","20 Tickets","25 Tickets","30 Tickets","A lot of Tickets"};
-		default = 15;
+		default = 30;
 	};
 	
 	class TimeBetweenWaves
@@ -70,7 +69,7 @@ class Params
 		title = "Cooldown between Waves";
 		values[] = {5, 10, 20, 25, 30};
 		texts[] = {"5 Seconds","10 Seconds","20 Seconds","25 Seconds","30 Seconds"};
-		default = 10;
+		default = 30;
 	};
 	
 	#include "\a3\functions_f\Params\paramWeather.hpp"
