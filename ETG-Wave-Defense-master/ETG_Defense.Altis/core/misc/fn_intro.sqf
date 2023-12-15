@@ -23,8 +23,6 @@ _camera camSetPos [28546,25745.2,23.3874];
 _camera camCommit 8;
 uisleep 8;
 
-["Be careful" ,"Survive as long as you can"] spawn BIS_fnc_infoText;
-
 _camera camSetPos [28355.3,25884.1,39.9841];
 _camera camSetTarget player;
 _camera camCommit 6;
@@ -59,9 +57,5 @@ if (!isNil "defense_heli") then {
 			unassignVehicle _x;
 		};
 	} forEach units group player;
-
-	_task = player createSimpleTask ["Defend the Base"];
-	_task setSimpleTaskDestination (getMarkerPos "bluefor_base_AI_wp");
-	_task setSimpleTaskDescription ["Try to survive as long as possible.<br/>You will be rewarded with money for kills and assists.<br/>With that money you can upgrade and expand your arsenal.","Survive as many Waves as possible",""];
 };
 
