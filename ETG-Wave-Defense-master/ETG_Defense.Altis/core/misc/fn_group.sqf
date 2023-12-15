@@ -35,7 +35,6 @@ if (_mode == 1) exitWith {
 		_group allowFleeing 0;
 		{
 			_x addMPEventHandler ["MPKilled", {[_this] call fn_onAIKilled;}];
-			_x disableAI "SUPPRESSION";
 			_x allowDammage true;
 		} forEach units _group;
 	} forEach _groups;
