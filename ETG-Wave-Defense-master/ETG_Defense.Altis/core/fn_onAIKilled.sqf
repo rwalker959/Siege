@@ -10,7 +10,7 @@ _killer = _this select 1;
 
 //give money to killer
 
-_money = player getvariable ["ttt_money", 1];
-player setvariable ["seige_money", (_money + 1)];
+_money = player getvariable ["seige_money", 1];
+_killer setvariable ["seige_money", (_money + 1)];
 _money = player getvariable ["seige_money", 1];
 
