@@ -1,6 +1,6 @@
 /*
 	Filename: fn_onAIKilled.sqf
-	Author: Kellojo
+	Author: Kellojo / Ross
 	Description: main function for the kill reward
 */
 
