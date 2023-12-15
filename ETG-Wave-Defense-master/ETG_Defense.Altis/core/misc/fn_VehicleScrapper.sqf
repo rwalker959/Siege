@@ -30,5 +30,8 @@ _vehs = nearestObjects [player, ["Car","Tank","Air"], 10];
 	_disp = getText (configfile >> "CfgVehicles" >>_class >> "displayName");
 	hint parseText format ["<t color='#97FA21'><t size='2.2'>Sold: %2<br/></t></t>Congratulations!<br/>You have revieved %1 funds as a reward.",_reward,_disp];
 	[1,_reward] remoteExec ["fn_addMoney", 2, false];
+	_money = player getvariable ["seige_money", 1];
+	_killer setvariable ["seige_money", (_money + _reward)];
+	_money = player getvariable ["seige_money", 1];
 	deletevehicle _x;
 } forEach _vehs;
