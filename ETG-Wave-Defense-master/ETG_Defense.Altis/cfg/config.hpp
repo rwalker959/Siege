@@ -24,147 +24,13 @@ class VehicleScrapper {
 	bVehicles = 25;
 };
 
-class Upgrades {
-	dialog = "Upgrades_Terminal";
-	
-	class Wall_V1 {
-		title = "STR_UpgradeTitles_Wallv1";
-		description = "STR_up_WallV1";
-		price = 100;
-		varname = "defense_upgrade_wall_v1";
-		function = "fn_wall";
-		condition = "!defense_upgrade_wall_v1";
-		onServer = true;
-	};
-	
-	class Wall_V2 {
-		title = "STR_UpgradeTitles_Wallv2";
-		description = "STR_up_WallV2";
-		price = 150;
-		varname = "defense_upgrade_wall_v2";
-		function = "fn_wall";
-		condition = "defense_upgrade_wall_v1 && !defense_upgrade_wall_v2";
-		onServer = true;
-	};
-	
-	class Wall_V3 {
-		title = "STR_UpgradeTitles_Wallv3";
-		description = "STR_up_WallV3";
-		price = 300;
-		varname = "defense_upgrade_wall_v3";
-		function = "fn_wall";
-		condition = "!defense_upgrade_wall_v3";
-		onServer = true;
-	};
-	
-	class Wall_V4 {
-		title = "STR_UpgradeTitles_Wallv4";
-		description = "STR_up_WallV4";
-		price = 200;
-		varname = "defense_upgrade_wall_v4";
-		function = "fn_wall";
-		condition = "!defense_upgrade_wall_v4 && defense_upgrade_wall_v3";
-		onServer = true;
-	};
-	
-	class Wall_V5 {
-		title = "STR_UpgradeTitles_Wallv5";
-		description = "STR_up_WallV5";
-		price = 200;
-		varname = "defense_upgrade_wall_v5";
-		function = "fn_wall";
-		condition = "!defense_upgrade_wall_v5 && defense_upgrade_wall_v3";
-		onServer = true;
-	};
-	
-	class Air_U {
-		title = "STR_UpgradeTitles_AirU";
-		description = "STR_up_AirU";
-		price = 100;
-		varname = "defense_upgrade_air";
-		function = "fn_air";
-		condition = "!defense_upgrade_air";
-		onServer = true;
-	};
-	
-	class Perk_u {
-		title = "STR_UpgradeTitles_PerkU";
-		description = "STR_up_PerkU";
-		price = 25;
-		varname = "defense_upgrade_perk";
-		function = "fn_perks";
-		condition = "!defense_upgrade_perk";
-		onServer = true;
-	};
-	
-	class turret_1 {
-		title = "STR_UpgradeTitles_Turret1";
-		description = "STR_up_Turret1";
-		price = 450;
-		varname = "defense_upgrade_turret_1";
-		function = "fn_wall";
-		condition = "!defense_upgrade_turret_1";
-		onServer = true;
-	};
-	
-	class turret_2 {
-		title = "STR_UpgradeTitles_Turret2";
-		description = "STR_up_Turret2";
-		price = 450;
-		varname = "defense_upgrade_turret_2";
-		function = "fn_wall";
-		condition = "!defense_upgrade_turret_2";
-		onServer = true;
-	};
-	
-	class turret_3 {
-		title = "STR_UpgradeTitles_Turret3";
-		description = "STR_up_Turret3";
-		price = 450;
-		varname = "defense_upgrade_turret_3";
-		function = "fn_wall";
-		condition = "!defense_upgrade_turret_3";
-		onServer = true;
-	};
-	
-	class RaR_T {
-		title = "STR_UpgradeTitles_TM";
-		description = "STR_up_RaRTurret";
-		price = 50;
-		varname = "";
-		function = "fn_rearmTurrets";
-		condition = "defense_upgrade_turret_1 || defense_upgrade_turret_2 || defense_upgrade_turret_3";
-		onServer = true;
-	};
-};
-
 class Support {
 	dialog = "Support_Terminal";
-	
-	class Supply {
-		title = "STR_UpgradeTitles_SupplyD";
-		description = "STR_up_Supply";
-		price = 60;
-		varname = "";
-		function = "fn_air";
-		condition = "true";
-		onServer = false;
-	};
-	
-	class Supply_stomper {
-		title = "STR_UpgradeTitles_StomperD";
-		description = "STR_up_SupStomper";
-		price = 250;
-		varname = "";
-		function = "fn_air";
-		condition = "true";
-		onServer = false;
-	};
-	
+
 	class UAV {
 		title = "STR_UpgradeTitles_UAV";
 		description = "STR_up_UAV";
-		price = 20;
+		_cost = 20;
 		varname = "";
 		function = "fn_uav";
 		condition = "true";
@@ -174,7 +40,7 @@ class Support {
 	class UAV_Strike {
 		title = "STR_UpgradeTitles_Falcon";
 		description = "STR_up_UAVStrike";
-		price = 800;
+		_cost = 800;
 		varname = "";
 		function = "fn_air";
 		condition = "defense_uav == objNull || !alive defense_uav";
@@ -184,7 +50,7 @@ class Support {
 	class Mortar {
 		title = "STR_UpgradeTitles_MS";
 		description = "STR_up_Mortar";
-		price = 120;
+		_cost = 120;
 		varname = "";
 		function = "fn_air";
 		condition = "true";
@@ -194,7 +60,7 @@ class Support {
 	class Artillery {
 		title = "STR_UpgradeTitles_AS";
 		description = "STR_up_Artillery";
-		price = 50;
+		_cost = 50;
 		varname = "";
 		function = "fn_air";
 		condition = "true";
@@ -204,54 +70,10 @@ class Support {
 	class CAS {
 		title = "STR_UpgradeTitles_CAS";
 		description = "STR_up_CAS";
-		price = 30;
+		_cost = 30;
 		varname = "";
 		function = "fn_air";
 		condition = "true";
-		onServer = false;
-	};
-};
-	
-class Perks {
-	dialog = "Perks_Terminal";
-	
-	class Perk_GearSafe {
-		title = "STR_UpgradeTitles_GS";
-		description = "STR_up_PerkGear";
-		price = 25;
-		varname = "defense_perk_gearsafe";
-		function = "fn_perks";
-		condition = "!defense_perk_gearsafe";
-		onServer = false;
-	};
-	
-	class Perk_PassiveHeal {
-		title = "STR_UpgradeTitles_PH";
-		description = "STR_up_PerkPHeal";
-		price = 25;
-		varname = "defense_perk_heal";
-		function = "fn_perks";
-		condition = "!defense_perk_heal";
-		onServer = false;
-	};
-	
-	class Perk_Mechanic {
-		title = "STR_UpgradeTitles_Mechanic";
-		description = "STR_up_PerkMechanic";
-		price = 25;
-		varname = "defense_perk_mechanic";
-		function = "fn_perks";
-		condition = "!defense_perk_mechanic";
-		onServer = false;
-	};
-	
-	class Perk_Fatigue {
-		title = "STR_UpgradeTitles_Fatigue";
-		description = "STR_up_PerkFatigue";
-		price = 10;
-		varname = "defense_perk_fatigue";
-		function = "fn_perks";
-		condition = "!defense_perk_fatigue";
 		onServer = false;
 	};
 };
