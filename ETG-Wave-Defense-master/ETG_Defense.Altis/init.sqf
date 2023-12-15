@@ -30,13 +30,9 @@ fn_KillMessage = compile preprocessFile "core\dialog\fn_KillMessage.sqf";
 fn_UpgradeTerminal = compile preprocessFile "core\dialog\fn_UpgradeTerminal.sqf";
 
 //Upgrade scripts
-fn_wall = compile preprocessFile "core\upgrades\fn_wall.sqf";
 fn_air = compile preprocessFile "core\upgrades\fn_air.sqf";
-fn_rearmTurrets = compile preprocessFile "core\upgrades\fn_rearmTurrets.sqf";
 fn_cas = compile preprocessFile "core\upgrades\fn_cas.sqf";
-fn_supply = compile preprocessFile "core\upgrades\fn_supply.sqf";
 fn_uav = compile preprocessFile "core\upgrades\fn_uav.sqf";
-fn_perks = compile preprocessFile "core\upgrades\fn_perks.sqf";
 
 //Debug
 defense_debug = 0;
@@ -57,13 +53,10 @@ defense_end_server = false;
 defense_wave_complete = false;
 defense_base_under_attack = false;
 
-defense_player_spawngear = (missionConfigFile >> "Main" >> "default_gear") call BIS_fnc_getCfgData;
-defense_turrets = [Turret_V3_1,Turret_V3_2,Turret_V2_1,Turret_V2_2,Turret_V1_1,Turret_V1_2];
 defense_uav = objNull;
 ETG_cleanUPVehs = [];
 defense_att_Groups = [];
 defense_att_main_group_scale = 0;
-
 
 //Setup Upgrade vars = false
 _lfv = (missionConfigFile >> "Main" >> "lookForVars")  call BIS_fnc_getCfgData;
@@ -76,20 +69,6 @@ _lfv = (missionConfigFile >> "Main" >> "lookForVars")  call BIS_fnc_getCfgData;
 		};
 	} forEach _entries;
 } forEach _lfv;
-
-
-//Hide objects
-{_x hideObjectGlobal true;} forEach nearestObjects [getMarkerPos "bluefor_base_AI_wp", ["Land_Wall_Tin_4"], 200];
-{_x hideObjectGlobal true;} forEach nearestObjects [getMarkerPos "bluefor_base_AI_wp", ["Land_BagFence_Long_F"], 200];
-{_x hideObjectGlobal true;} forEach nearestObjects [getMarkerPos "bluefor_base_AI_wp", ["Land_HBarrierWall6_F"], 200];
-{_x hideObjectGlobal true;} forEach nearestObjects [getMarkerPos "bluefor_base_AI_wp", ["Land_HBarrierWall4_F"], 200];
-{_x hideObjectGlobal true;} forEach nearestObjects [getMarkerPos "bluefor_base_AI_wp", ["Land_HBarrierWall_corner_F"], 200];
-{_x hideObjectGlobal true;} forEach nearestObjects [getMarkerPos "bluefor_base_AI_wp", ["Land_BagFence_Round_F"], 200];
-{_x hideObjectGlobal true;} forEach nearestObjects [getMarkerPos "bluefor_base_AI_wp", ["Land_Cargo_Patrol_V1_F"], 200];
-defense_perkTerminal hideObjectGlobal true;
-
-//barracks & lighthouse...
-{_x allowDamage false;} forEach nearestObjects [getMarkerPos "bluefor_base_AI_wp", ["Land_i_Barracks_V1_F","Land_LightHouse_F"], 200];
 
 //Start
 [] call fn_intro;
