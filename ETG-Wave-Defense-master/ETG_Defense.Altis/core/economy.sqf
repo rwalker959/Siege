@@ -37,3 +37,6 @@ buymedicresupply = {
   execvm "cfg\ammoboxes\Medical Resupply.sqf"
 	hint "You have bought a Medic Resupply Crate";
 };
+
+
+//possibly add buy engineer and medic trait?
